@@ -5,36 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cabinet Physio.R.M.</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; color: #0D1B2A; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #0D1B2A; color: #ffffff; }
     header { background: #0D1B2A; color: white; padding: 1rem; position: sticky; top: 0; }
     header nav { display: flex; justify-content: space-between; align-items: center; }
     header a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
     header a:hover { color: #F97316; }
-    .hero { background: url('https://imgur.com/a/f20L0Ls#PC9Zl75') center/cover no-repeat; color: white; text-align: center; padding: 6rem 2rem; background-blend-mode: multiply; background-color: rgba(13, 27, 42, 0.6); }
+    .hero { background: url('images/accueil.jpg') center/cover no-repeat; color: white; text-align: center; padding: 6rem 2rem; background-blend-mode: multiply; background-color: rgba(13, 27, 42, 0.8); }
     .hero h1 { font-size: 2.5rem; margin: 0; color: #ffffff; }
     .hero p { font-size: 1.2rem; color: #F97316; }
     section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
-    h2 { color: #0D1B2A; border-left: 6px solid #F97316; padding-left: 10px; }
+    h2 { color: #F97316; border-left: 6px solid #F97316; padding-left: 10px; }
     .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .service { background: #f7fafc; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s; }
+    .service { background: #0D1B2A; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); transition: transform 0.2s; }
     .service:hover { transform: translateY(-5px); border-left: 5px solid #F97316; }
-    .service h3 { color: #0D1B2A; }
-    .service p { color: #333; }
-    a.button { display: inline-block; margin-top: 1rem; padding: 0.7rem 1.5rem; background: #F97316; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
-    a.button:hover { background: #0D1B2A; }
+    .service h3 { color: #F97316; }
+    .service p { color: #ffffff; }
+    a.button, button.button { display: inline-block; margin-top: 1rem; padding: 0.7rem 1.5rem; background: #F97316; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; }
+    a.button:hover, button.button:hover { background: #ffffff; color: #0D1B2A; }
     footer { background: #0D1B2A; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
     iframe { width: 100%; height: 300px; border: 0; border-radius: 8px; }
+    form input, form textarea { width: 100%; padding: 0.5rem; margin-top: 0.3rem; border: 1px solid #ccc; border-radius: 4px; }
+    form label { font-weight: bold; color: #ffffff; }
   </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="logo">Physio.R.M.</div>
-<div class="menu">
-<a href="#about">À propos</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
+    <div class="logo">Physio Rehab Movement</div>
+    <div class="menu">
+      <a href="#about">À propos</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
@@ -72,27 +74,29 @@
 </section>
 
 <section id="contact">
-  <h2>Contact & Accès</h2>
+  <h2>Contact & Prise de rendez-vous</h2>
   <p><strong>Adresse :</strong> 6 chemin de la Solane, 19000 Tulle</p>
-  <p><strong>Téléphone :</strong> 05 87 49 19 23</p>
-  <p><strong>Prise de rendez-vous :<form action="https://formsubmit.co/contact.physiorm@gmail.com" method="POST">
-    <label for="nom">Nom :</label><br>
-    <input type="text" id="nom" name="nom" required><br><br>
+  <p><strong>Téléphone :</strong> 01 23 45 67 89</p>
 
-    <label for="email">Email :</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+  <form action="https://formsubmit.co/tonadresse@gmail.com" method="POST">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
 
-    <label for="telephone">Téléphone :</label><br>
-    <input type="tel" id="telephone" name="telephone" required><br><br>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
 
-    <label for="date">Date souhaitée :</label><br>
-    <input type="date" id="date" name="date" required><br><br>
+    <label for="telephone">Téléphone :</label>
+    <input type="tel" id="telephone" name="telephone" required>
 
-    <label for="message">Motif de la prise de rendez-vous :</label><br>
-    <textarea id="message" name="message" rows="4"></textarea><br><br>
+    <label for="date">Date souhaitée :</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" rows="4"></textarea>
 
     <button type="submit" class="button">Envoyer la demande</button>
   </form>
+
   <iframe 
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2824.4037029233655!2d1.7651233156153665!3d44.54526797910166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47746fcae92663fb%3A0x6f2e00e1a0d92bcd!2s6%20Chemin%20de%20la%20Solane%2C%2019000%20Tulle!5e0!3m2!1sfr!2sfr!4v1694600000000!5m2!1sfr!2sfr" 
     width="100%" 
@@ -104,7 +108,7 @@
 </section>
 
 <footer>
-  <p>&copy; 2025 Physio.R.M. - Tous droits réservés</p>
+  <p>&copy; 2025 Cabinet de Kinésithérapie - Tous droits réservés</p>
 </footer>
 
 </body>
