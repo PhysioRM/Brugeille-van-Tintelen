@@ -127,7 +127,7 @@
 document.getElementById("contact-form").addEventListener("submit", function(e){
   e.preventDefault();
 
-  fetch("TON_URL_SCRIPT_GOOGLE_APPS", {
+  fetch("https://script.google.com/macros/s/AKfycbzerq2CDuXQLtNNHh5Gy42uBgHT0emA6FnHCPfsxtZciSnnqCdTg2VCXo3rcHAJK-be/exec", {
     method: "POST",
     body: JSON.stringify({
       nom: document.getElementById("nom").value,
