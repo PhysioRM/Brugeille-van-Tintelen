@@ -19,9 +19,8 @@
     }
 
     .logo-hero {
-        display: block;
-        margin: 0 auto 1rem auto;
-        width: 300px; /* ajuste selon la taille du logo */
+  width: 80%;
+  max-width: 300px;
     }
 
     .hero h1 { font-size: 2.5rem; margin: 0; color: #ffffff; }
@@ -130,7 +129,7 @@ document.getElementById("contact-form").addEventListener("submit", function(e){
   let form = document.getElementById("contact-form");
   let formData = new FormData(form);
 
-  fetch("https://script.google.com/macros/s/AKfycbzICqbBk5bsJYdv08pGoxkRXHIVJawsWEkdjtiihwz2Nym7GQ5UqfUoa65lK5wqbxi4/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbw7JmNNeAhpNykHrDO2NOw7EYkg5USOX7Xxa3tuTNTBBIqwQI4n7DTZKUn0TgH4aCFD/exec", {
     method: "POST",
     body: formData
   })
