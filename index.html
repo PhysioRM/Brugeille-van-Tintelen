@@ -103,42 +103,51 @@
   <p><strong>Adresse :</strong> 6 chemin de la Solane, 19000 Tulle</p>
   <p><strong>Téléphone :</strong> 05 87 49 19 23</p>
 
- <form id="contact-form">
-  <label for="nom">Nom :</label>
-  <input type="text" id="nom" name="nom" required>
+  <form id="contact-form">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
 
-  <label for="email">Email :</label>
-  <input type="email" id="email" name="email" required>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
 
-  <label for="telephone">Téléphone :</label>
-  <input type="tel" id="telephone" name="telephone" required>
+    <label for="telephone">Téléphone :</label>
+    <input type="tel" id="telephone" name="telephone" required>
 
-  <label for="date">Date de la prescription :</label>
-  <input type="date" id="date" name="date" required>
+    <label for="date">Date de la prescription :</label>
+    <input type="date" id="date" name="date" required>
 
-  <label for="message">Motif de la demande :</label>
-  <textarea id="message" name="message" rows="4"></textarea>
+    <label for="message">Motif de la demande :</label>
+    <textarea id="message" name="message" rows="4"></textarea>
 
-  <button type="submit" class="button">Envoyer la demande</button>
-</form>
+    <button type="submit" class="button">Envoyer la demande</button>
+  </form>
+
+  <div id="form-message" style="color:#F97316; margin-top:10px;"></div>
+</section>
 
 <script>
 document.getElementById("contact-form").addEventListener("submit", function(e){
   e.preventDefault();
-
-  let form = document.getElementById("contact-form");
-  let formData = new FormData(form);
-
-  fetch("https://script.google.com/macros/s/AKfycbzgOAFAchdSsouZH4E18fdg5lS0udhinLiSpYvWe-w/dev", {
+  
+  const form = e.target;
+  const formData = new FormData(form);
+  const formMessage = document.getElementById("form-message");
+  
+  fetch("https://script.google.com/macros/s/AKfycbzdx-RlffdByWEPM9NFQRw8wC0mWoZPacGJpUnlKs1obbxQfPw8nZoKmwcUwldb_Dmx/exec", {
     method: "POST",
     body: formData
   })
-  .then(res => res.text())
+  .then(response => {
+    if (!response.ok) throw new Error("La requête a échoué.");
+    return response.text();
+  })
   .then(data => {
-    alert("Votre demande a été enregistrée ✅");
+    formMessage.textContent = "✅ Votre demande a été enregistrée.";
     form.reset();
   })
-  .catch(err => alert("Erreur : " + err));
+  .catch(err => {
+    formMessage.textContent = "❌ Erreur : " + err.message;
+  });
 });
 </script>
 
